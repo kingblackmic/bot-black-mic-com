@@ -1,35 +1,34 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
+console.log("Welcome Again !");
+
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setStatus('idle');
 });
 
-client.on('message', message => {
-var prefix = "!";
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`**
+      حياك الله ي بعد راسي
+       خش بتنورنا فعاليات وكل شيء حلو موجود !
+        ي بعد عيني الرابط تحت
+          BlackMic (:
 
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-   let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-if(message.content.split(' ')[0] == prefix + 'bc') {
-    if (!args[1]) {
-message.channel.send("**!bc <message>**");
-return;
-}
-        message.guild.members.forEach(m => {
-   if(!message.member.hasPermission('ADMINISTRATOR')) return;
-            var bc = new Discord.RichEmbed()
-            .addField('» السيرفر :', `${message.guild.name}`)
-            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-            .addField(' » الرسالة : ', args)
-            .setColor('#ff0000')
-            // m.send(`[${m}]`);
-            m.send(`${m}`,{embed: bc});
-        });
-    }
-    } else {
-        return;
-    }
-});
-client.login('NDIzMTUzMzcwNTE0MTk0NDMy.DYmL0A.F0u_L8RNxNUuX1RoDB2q0RsQJq4');
+                                 [ https://discord.gg/x3h4TJ ] **`)
+}).catch(console.error)
+})
+
+client.on("guildMemberRemove", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`**
+      حياك الله ي بعد راسي
+       خش بتنورنا فعاليات وكل شيء حلو موجود !
+        ي بعد عيني الرابط تحت
+         Hero (:
+
+                                 [ https://discord.gg/NNzAj2f ] **`)
+}).catch(console.error)
+})
+
+client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
