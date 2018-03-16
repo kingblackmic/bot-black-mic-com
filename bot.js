@@ -13,7 +13,7 @@ client.on('message', msg => {
 
 client.on('message', function(message) {
                   if(!message.channel.guild) return;
-    if(message.content ===  'f!color 140') {
+    if(message.content ===  'f!color') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
             message.channel.send('جاري عمل الالوان |✅')
@@ -24,7 +24,7 @@ client.on('message', function(message) {
 });
 
 client.on('message', message=>{
-    if (message.content ===  'f!color 140'){
+    if (message.content ===  'f!color'){
               if(!message.channel.guild) return;
             if (message.member.hasPermission('MANAGE_ROLES')){
                 setInterval(function(){})
