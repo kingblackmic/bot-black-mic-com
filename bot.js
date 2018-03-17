@@ -115,50 +115,18 @@ client.on('message', message => {
  })
 
 
-
-client.on('message', message => {
-var prefix = ".";
-
-  if (!message.content.startsWith(prefix)) return;
-  var args = message.content.split(' ').slice(1);
-  var argresult = args.join(' ');
-  if (message.author.id == 257111476404224001) return;
-
-
-if (message.content.startsWith(prefix + 'playing')) {
-  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
-client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult}** : Playing changed to`)
-    message.react("👌")
-
-} else
-
-if (message.content.startsWith(prefix + 'setname')) {
-  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
-  client.user.setUsername(argresult).then
-      message.channel.sendMessage(`**${argresult}** : done`)
-} else
-
-if (message.content.startsWith(prefix + 'streem')) {
-  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
-client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
-    message.channel.sendMessage(`**${argresult}** streem changed to`)
-    message.react("👌")
-
-} else
-
-
-
-if (message.content.startsWith(prefix + 'watching')) {
-  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
-    client.user.setActivity(argresult, {type : 'watching'});
- message.channel.sendMessage(`**${argresult}** : Watching changed to`)
- message.react("👌")
-
-}
-
- });
-
+     
+  client.on("message", msg => {
+     if (msg.content.startsWith(prefix + `hug`)) {
+    let member = msg.mentions.members.first();
+    const embed = new Discord.RichEmbed()
+    embed.setFooter("!hug | MONSTER-BOT ")
+    embed.setColor(0xefb81c)
+    embed.addField("Cute!", msg.author + " just hugged " + member + "!", true)
+    embed.setThumbnail("https://i.imgur.com/IPs7xKU.gif")
+    msg.channel.send({ embed });
+  }
+})
 
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
