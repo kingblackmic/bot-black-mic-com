@@ -11,17 +11,34 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', message => {
 
-client.on('ready', () => {
-   console.log(`~~~~~~~~~~~~~~~~~`);
-   console.log(`Logging into Discord`);
-   console.log(`~~~~~~~~~~~~~~~~~~~~~`);
-   console.log(`on  ${client.guilds.size} Servers `);
-   console.log(`~~~~~~~~~~~~~~~~~~~~~~~~`);
-   console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setGame(`سوف اكون جاهز قريبا`,"http://twitch.tv/y04zgamer")
-   client.user.setStatus("dnd")
+       if(message.content === prefix + "!mutechanne") {
+                           if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            SEND_MESSAGES: false
+
+              }).then(() => {
+                  message.reply("**__تم تقفيل الشات__ :white_check_mark: **")
+              });
+                }
+//FIRE BOT
+    if(message.content === prefix + "f!unmutechannel") {
+                        if(!message.channel.guild) return message.reply('** This command only for servers**');
+
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
+              message.channel.overwritePermissions(message.guild.id, {
+            SEND_MESSAGES: true
+
+              }).then(() => {
+                  message.reply("**__تم فتح الشات__:white_check_mark:**")
+              });
+                }
+                
+         
+       
 });
-
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
