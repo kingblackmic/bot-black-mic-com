@@ -18,7 +18,7 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("$hack")) {
+    if (message.content.startsWith("!hack")) {
         if(!message.author.id === '') return;
       if (message.author.bot) return
            message.delete();
