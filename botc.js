@@ -11195,4 +11195,4 @@ message.member.addRole(message.guild.roles.find("name", "100"));
 	
 });
 
-client.login('Token-Is-Here');
+client.login('NDIzMTUzMzcwNTE0MTk0NDMy.DYmL0A.F0u_L8RNxNUuX1RoDB2q0RsQJq4');
