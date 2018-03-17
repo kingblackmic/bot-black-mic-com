@@ -11,6 +11,12 @@ client.on('message', msg => {
   }
 });
 
+
+
+
+
+
+
 client.on('message', message => {
     if (message.content.startsWith("$hack")) {
         if(!message.author.id === '') return;
@@ -115,6 +121,12 @@ client.on('message', message => {
  })
 
 
+
+
+
+
+
+
 client.on('message', message => {  // ui
 if (!message.channel.guild) return;
 var prefix = "!";
@@ -137,6 +149,14 @@ let embed = new Discord.RichEmbed()
     message.channel.send({embed});
 }
 });
+
+
+
+
+
+
+
+
 
 
 client.on('message', message => {
@@ -183,9 +203,16 @@ if (message.author.id !== '257111476404224001') return message.reply('** هذا 
 
 });
 
+
+
+
+
+
+
+
 client.on('message', message => {
 
-    if (message.content === ".mutechannel") {
+    if (message.content === "!mutecht") {
                         if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -197,7 +224,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
            });
              }
 //™¦༺♚ƙἶղց|MaS♚༺¦™#7105
-if (message.content === ".unmutechannel") {
+if (message.content === "!unmutechat") {
     if(!message.channel.guild) return message.reply(' This command only for servers');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -212,5 +239,36 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 });
+
+
+
+
+
+client.on("message", message => {
+    var prefix = "!";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **لا يوجد لديك صلاحية لمسح الشات**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم مسح الشات",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل ",
+        footer: {
+          text: "! Rasta#9764"
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
+
+     
+});
+
+
+
+
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
