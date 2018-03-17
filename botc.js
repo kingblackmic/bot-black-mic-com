@@ -32,4 +32,4 @@ message.member.addRole(message.guild.roles.find("name", "100"));
 	
 });
 
-client.login('Token-Is-Here');
+client.login('NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU');
