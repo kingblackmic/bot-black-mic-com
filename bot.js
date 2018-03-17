@@ -117,8 +117,8 @@ client.on('message', message => {
 
 client.on('message', message => {  // ui
 if (!message.channel.guild) return;
-var prefix = "#";
-  if (message.content ===  prefix + 'ui') {
+var prefix = "!";
+  if (message.content ===  prefix + 'ul') {
 let user = message.mentions.users.first();    
  if (!user) { user = message.author }
 let guild = message.guild;
