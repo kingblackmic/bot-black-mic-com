@@ -259,7 +259,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل ",
         footer: {
-          text: "! Rasta#9764"
+          text: "BlackMic#2906"
         }
       }}).then(msg => {msg.delete(3000)});
                           }
