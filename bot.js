@@ -31,7 +31,7 @@ client.on('guildMemberAdd', member => {
 
 
 client.on("message", message => {
-    var prefix = ".";
+    var prefix = "!";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
                 if (!message.member.hasPermission("MANGE_MESSAGES"))  return;
