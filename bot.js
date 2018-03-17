@@ -181,6 +181,6 @@ if (message.author.id !== '257111476404224001') return message.reply('** هذا 
  message.channel.sendMessage(`**${argresult}** : تم تغيير الووتشينق الى`)
 }
 
- });
+});
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
