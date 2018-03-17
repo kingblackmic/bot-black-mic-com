@@ -126,7 +126,7 @@ var prefix = ".";
 
 
 if (message.content.startsWith(prefix + 'playing')) {
-  if (message.author.id !== 'botownerid') return message.reply('**only for the botowner **')
+  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
 client.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult}** : Playing changed to`)
     message.react("👌")
@@ -134,13 +134,13 @@ client.user.setGame(argresult);
 } else
 
 if (message.content.startsWith(prefix + 'setname')) {
-  if (message.author.id !== 'botownerid') return message.reply('**only for the botowner **')
+  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
   client.user.setUsername(argresult).then
       message.channel.sendMessage(`**${argresult}** : done`)
 } else
 
 if (message.content.startsWith(prefix + 'streem')) {
-  if (message.author.id !== 'botownerid') return message.reply('**only for the botowner **')
+  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
 client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
     message.channel.sendMessage(`**${argresult}** streem changed to`)
     message.react("👌")
@@ -150,7 +150,7 @@ client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
 
 
 if (message.content.startsWith(prefix + 'watching')) {
-  if (message.author.id !== 'botownerid') return message.reply('**only for the botowner **')
+  if (message.author.id !== '257111476404224001') return message.reply('**only for the botowner **')
     client.user.setActivity(argresult, {type : 'watching'});
  message.channel.sendMessage(`**${argresult}** : Watching changed to`)
  message.react("👌")
