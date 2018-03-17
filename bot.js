@@ -138,44 +138,55 @@ let embed = new Discord.RichEmbed()
 }
 });
 
-const kingmas = [
-   '*** منشن الجميع وقل انا اكرهكم. ***',
-'*** اتصل على امك و قول لها انك تحبها :heart:. ***',
-   '***     تصل على الوالده  و تقول لها  احب وحده.***',
-   '*** تتصل على شرطي تقول له عندكم مطافي.***',
-   '*** صور اي شيء يطلبه منك الاعبين.***',
-   '*** اكتب في الشات اي شيء يطلبه منك الاعبين في الخاص. ***',
-   '*** اتصل على احد من اخوياك  خوياتك , و اطلب منهم مبلغ على اساس انك صدمت بسيارتك.***',
-   '*** اعطي اي احد جنبك كف اذا مافيه احد جنبك اعطي نفسك و نبي نسمع صوت الكف.***',
-   '***  تروح عند شخص تقول له احبك. ***',
-   '***روح عند اي احد بالخاص و قول له انك تحبه و الخ.***',
-   '*** اذهب الى واحد ماتعرفه وقل له انا كيوت وابي بوسه. ***',
-   '*** روح الى اي قروب عندك في الواتس اب و اكتب اي شيء يطلبه منك الاعبين  الحد الاقصى 3 رسائل. ***',
-   '*** اذا انت ولد اكسر اغلى او احسن عطور عندك اذا انتي بنت اكسري الروج حقك او الميك اب حقك. ***',
-   '*** ذي المرة لك لا تعيدها.***',
-   '*** ارمي جوالك على الارض بقوة و اذا انكسر صور الجوال و ارسله في الشات العام.***',
-   '*** اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل..... ***',
-   '*** تكلم باللهجة السودانية الين يجي دورك مرة ثانية.***',
-   '***سو مشهد تمثيلي عن مصرية بتولد.***',
-   '*** قول نكتة اذا و لازم احد الاعبين يضحك اذا محد ضحك يعطونك ميوت الى ان يجي دورك مرة ثانية. ***',
-   '*** قول نكتة اذا و لازم احد الاعبين يضحك اذا محد ضحك يعطونك ميوت الى ان يجي دورك مرة ثانية.***',
-   '*** سامحتك خلاص مافيه عقاب لك :slight_smile:. ***',
-   '*** اذهب الى واحد ماتعرفه وقل له انا كيوت وابي بوسه.***',
-   '*** تتصل على الوالده  و تقول لها خطفت شخص. ***',
-   '*** روح اكل ملح + ليمون اذا مافيه اكل اي شيء من اختيار الي معك.  ***'
-]
- client.on('message', message => {
- if (message.content.startsWith(prefix + 'حكم')) {
-  var mariam= new Discord.RichEmbed()
-  .setTitle("لعبة حكم ..")
-  .setColor('RANDOM')
-  .setDescription(`${kingmas[Math.floor(Math.random() * kingmas.length)]}`)
-   message.channel.sendEmbed(mariam);
-   message.react(":thinking:")
-  }
+
+var Discord = require('discord.io');
+const serverName = 'Hero' // أسم السيرفر
+var roleName = 'tst' // أسم الرتبه
+var bot = new Discord.Client({
+    token: 'NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU', // TOKEN
+    autorun: true
 });
-
-
+function getServerId(){
+    for(var i in bot.servers){
+        if(bot.servers[i].name == serverName){
+            return bot.servers[i].id;
+        }
+    }
+    return -1;
+}
+function getRoleId(){
+    var serverId = getServerId();
+    for(var i in bot.servers[serverId].roles){
+        if(bot.servers[serverId].roles[i].name == roleName){
+            return bot.servers[serverId].roles[i].id;
+        }
+    }
+    return -1;
+}
+function changeColor(hex){
+        var newColor = hex
+        bot.editRole({
+            serverID: getServerId(),
+            roleID: getRoleId(),
+            color: newColor
+        });
+}
+bot.on('ready', function(){
+    var ms = 700 ;
+    var color1 = ['#050505','#3c87c9','#f30202','#FFF700','#FF00EB','#0900FF','#0900FF'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (color1.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        changeColor(color1[i]);
+    }, ms);
+}); 
 
 
 
