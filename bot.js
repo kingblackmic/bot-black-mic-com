@@ -122,7 +122,7 @@ var prefix = ".";
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id == 410835593451405312) return;
+  if (message.author.id == 257111476404224001) return;
 
 
 if (message.content.startsWith(prefix + 'playing')) {
