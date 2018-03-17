@@ -7,28 +7,26 @@ client.on('ready', () => {
     client.user.setStatus('idle');
 });
 
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`**
-      حياك الله ي بعد راسي
-       خش بتنورنا فعاليات وكل شيء حلو موجود !
-        ي بعد عيني الرابط تحت
-          BlackMic (:
-
-                                 [ https://discord.gg/x3h4TJ ] **`)
-}).catch(console.error)
-})
-
-client.on("guildMemberRemove", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`**
-      حياك الله ي بعد راسي
-       خش بتنورنا فعاليات وكل شيء حلو موجود !
-        ي بعد عيني الرابط تحت
-         Hero (:
-
-                                 [ https://discord.gg/NNzAj2f ] **`)
-}).catch(console.error)
-})
+client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'welcome');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return;
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
+        .addField(':loudspeaker: | نورت السيرفر يا قلبي' , `Welcome to the server, ${member}`)
+        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
+                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
+               
+                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                     
+                                     .addField(' نتمنا لك سعاده', `${member.guild.name}`,true)
+                                       
+     .setFooter("**SERVER NAME**")
+        .setTimestamp()
+   
+      channel.sendEmbed(embed);
+    });
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
