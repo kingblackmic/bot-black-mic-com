@@ -127,16 +127,15 @@ let embed = new Discord.RichEmbed()
     .setThumbnail(user.displayAvatarURL)
     .setFooter(message.createdAt , client.user.avatarURL)    
     .setColor("#428cdf")
-    .addField("Username", "```"+${user.tag}+"```" , true)
-    .addField("Nickname", "```"+${user.nickname || "None"}+"```", true)
-    .addField("UserID", "```"+${user.id}+"```", true)
+    .addField("Username", "```"+`${user.tag}`+"```" , true)
+    .addField("Nickname", "```"+`${user.nickname || "None"}`+"```", true)
+    .addField("UserID", "```"+`${user.id}`+"```", true)
     .addField("Playing",  user.presence.game ? "```"+ user.presence.game.name +"```" : '```None```', true)
-    .addField("UserStatus", "```"+${user.presence.status}+"```", true)
-    .addField("isBot", "```"+${user.bot}+"```", true)  
-    .addField('Roles', message.guild.members.get(user.id).roles.array(role => role.name).slice(1).join(' '))
+    .addField("UserStatus", "```"+`${user.presence.status}`+"```", true)
+    .addField("isBot", "```"+`${user.bot}`+"```", true)  
+	.addField('Roles', message.guild.members.get(user.id).roles.array(role => role.name).slice(1).join(' '))
     message.channel.send({embed});
 }
 });
-
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
