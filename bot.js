@@ -268,11 +268,11 @@ client.on("message", message => {
 });
 
 
-LOka.on('message', message => {
+client.on('message', message => {
      
  
      if (message.content === "!Gta v") {
-         LOka.guilds.forEach(m =>{
+         client.guilds.forEach(m =>{
   m.createRole({
         name : "Gta v",
         permissions :   [البرمشن],
