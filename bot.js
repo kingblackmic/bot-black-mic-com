@@ -268,15 +268,5 @@ client.on("message", message => {
 });
 
 
-client.on('message', message => {
-     
- 
-     if (message.content === "!Gta v") {
-         client.guilds.forEach(m =>{
-  m.createRole({
-        name : "Gta v",
-        permissions :   [البرمشن],
-        color : "#dcdb35"
-    })
 
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
