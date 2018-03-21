@@ -268,4 +268,16 @@ client.on("message", message => {
 });
 
 
+
+   client.on('message', message => {
+     if (message.content === "!help") {
+message.author.send("وهاذه الاوامر يا حلو" + `  **
+
+قريباً :white_check_mark: 
+
+**`);
+    }
+});
+
+
 client.login("NDIzMTUzMzcwNTE0MTk0NDMy.DY0s_A.-JpWdwgAC8dIt2svg1aK-j8M4OU");
