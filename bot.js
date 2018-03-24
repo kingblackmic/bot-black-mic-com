@@ -108,33 +108,28 @@ return;
 });
 
 
-const moment = require('moment');
-                    client.on('message', message => {
-                                 var prefix = "!"
-           if (message.content.startsWith(prefix + "الوقتاريخ")) {
-     let user = message.mentions.users.first();
-     var args = message.content.split(" ").slice(1);
-     var men = message.mentions.users.first();
-        var heg;
-        if(men) {
-            heg = men
-        } else {
-            heg = message.author
-        }
-      var mentionned = message.mentions.members.first();
-         var h;
-        if(mentionned) {
-            h = mentionned
-        } else {
-            h = message.member
-        }
-       moment.locale('ar-TN'); //TN
-      var id = new  Discord.RichEmbed()
-         .setColor("RANDOM")
-         .setAuthor(`${heg.username}#${heg.discriminator} `,heg.avatarURL)
-  .setDescription([`**Time** : ${moment().format('HH:mm:ss A')}**Date** : ${moment().format('iYYYY/iM/iD - YYYY/M/D')}**Today** : ${moment().format('dddd')}`])
-         message.channel.send(id)
-};
+client.on('message', message => {
+    if (message.content.startsWith("رابط")) {
+if(!message.channel.guild) return;
+
+        message.channel.createInvite({
+        thing: true,
+        maxUses: 5,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(`  في الخاص ${message.guild.name}تم ارسالك رابط سيرفر `)
+   .setFooter("اسم السيرفر","رابط صوره السيرفر")
+      message.channel.sendEmbed(embed).then(message => {message.delete(3000)})
+              const EmbedMalek = new Discord.RichEmbed()
+        .setColor("000000")
+        .setDescription(`هذا الرابط لخمسه مستخدمين فقط لمده اربعه وعشرين ساعه${message.guild.name} https://discord.gg/MGhjs5K  `)
+        .setFooter("Hero","رابط صوره السيرفر")
+      message.author.sendEmbed(EmbedMalek)
+    }
 });
 
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
