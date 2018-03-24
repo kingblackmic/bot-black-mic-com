@@ -106,20 +106,33 @@ return;
         return;
     }
 });
-
-      client.on('message', message => {
-                                if(!message.channel.guild) return;
-                        if (message.content.startsWith('!بنج')) {
-                            if(!message.channel.guild) return;
-                            var msg = `${Date.now() - message.createdTimestamp}`
-                            var api = `${Math.round(client.ping)}`
-                            if (message.author.bot) return;
-                        let embed = new Discord.RichEmbed()
-                        .setAuthor(message.author.username,message.author.avatarURL)
-                        .setColor('RANDOM')
-                        .addField('**الوقت المستغرق:**',msg + " ms :signal_strength: ")
-         message.channel.send({embed:embed});
-                        }
-});
+const moment = require('moment');
+                    client.on('message', message => {
+                                 var prefix = "!"
+           if (message.content.startsWith(prefix + "الوقتاريخ")) {
+     let user = message.mentions.users.first();
+     var args = message.content.split(" ").slice(1);
+     var men = message.mentions.users.first();
+        var heg;
+        if(men) {
+            heg = men
+        } else {
+            heg = message.author
+        }
+      var mentionned = message.mentions.members.first();
+         var h;
+        if(mentionned) {
+            h = mentionned
+        } else {
+            h = message.member
+        }
+       moment.locale('ar-TN'); //TN
+      var id = new  Discord.RichEmbed()
+         .setColor("RANDOM")
+         .setAuthor(`${heg.username}#${heg.discriminator} `,heg.avatarURL)
+  .setDescription([`**Time** : ${moment().format('HH:mm:ss A')}**Date** : ${moment().format('iYYYY/iM/iD - YYYY/M/D')}**Today** : ${moment().format('dddd')}`])
+         message.channel.send(id)
+};
+      });
 
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
