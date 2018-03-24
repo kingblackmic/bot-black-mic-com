@@ -46,38 +46,35 @@ let embed = new Discord.RichEmbed()
     message.channel.send({embed});
 }
 });
- 
+
 client.on('message', message => {
-    var prefix = "!"
-    let command = message.content.split(" ")[0];
-  command = command.slice(prefix + 'length');
+if (message.content === "-server") {
+if(!message.channel.guild) return;
+const millis = new Date().getTime() - message.guild.createdAt.getTime();
+const now = new Date();
 
-  let args = message.content.split(" ").slice(1);
+const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
+const days = millis / 1000 / 60 / 60 / 24;
+let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
+var embed  = new Discord.RichEmbed()
+.setAuthor(message.guild.name, message.guild.iconURL)
+.addField("**🆔 سيـرفر ايــدي**", "**"+message.guild.id+"**",true)
+.addField("**👑 سيــرفر اونـر**", "**"+message.guild.owner+"**" ,true)
+.addField("**✅ الشــات الاســاســي**" , "**"+message.guild.DefaultChannel+"**" ,true)
+.addField("**🌍 المـوقع**" , "**"+message.guild.region+"**",true)
+.addField('**💬 عدد الرومــات الكتابيــة**',`**[ ${message.guild.channels.filter(m => m.type === 'text').size} ] Channel **`,true)
+.addField("**📣 عدد الرومــات الصوتــية**", ` ** [ ${message.guild.channels.filter(m => m.type === 'voice').size} ] Channel ** `,true)
+.addField("**🤔 عدد ايــام انشــاء السيــرفر**", ` ** [ ${days.toFixed(0)} ] ** Day ` ,true)
+.addField("**👔 الــرتــب**",`**[${message.guild.roles.size}]** Role `,true)
+.addField("**💠 مســتوى حمــاية الســيرفر**", ` ** [ ${verificationLevels[message.guild.verificationLevel]} ] ** `,true)
 
+.addField("👥عدد الاعضــاء",`
+**${message.guild.memberCount}**`)
+.setThumbnail(message.guild.iconURL)
+.setColor('RANDOM')
+message.channel.sendEmbed(embed)
 
-if(command == "draw") {
-    var Canvas = require('canvas')
-  , Image = new Canvas.Image
-  , canvas = new Canvas(450, 170)
-  , ctx = canvas.getContext('2d');
-  ctx.font = '30px Impact';
-  let args = message.content.split(" ").slice(1);
-  
-Image.src = canvas.toBuffer();
-
-    console.log(Image);
-ctx.drawImage(Image, 0, 0, Image.width / 470, Image.height / 170);
-ctx.fillText(args.join("  "),110, 70);
-
-
-ctx.beginPath();
-ctx.lineTo(50, 102);
-ctx.stroke();
-
-message.channel.sendFile(canvas.toBuffer());
 }
-}).on('ready', () => {
-
 });
 
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
