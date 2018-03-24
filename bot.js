@@ -8,7 +8,7 @@ client.user.setPresence({
   status: 'dnd',
   game: { 
      type: 0,
-     name: 'قررتُ أن أنسى، فكانَ أول ما نسيتُ قراري ♥️ ',
+     name: '@M.ZUON#4646 ',
      details: `I'm : KBOOSH - Developer and Programmer`,
      url: 'http://twitch.tv/Streammingg',
      state: `إنْ لَمْ تَجِد لكْ حآقدْ إعلمْ أنْك إنسآن فآشِلْ`,
@@ -17,7 +17,7 @@ client.user.setPresence({
         small_image: `366835431037337600`,
         small_text: ' Take This ! ' ,
         large_image: `370451271133429760`,
-        large_text: `ҜṦẰ FOREVER ♥` }
+        large_text: `ҜṦẰ.OMN♥` }
 
   }
     });
