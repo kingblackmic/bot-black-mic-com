@@ -26,8 +26,8 @@ client.user.setPresence({
 
 client.on('message', message => {  // ui
 if (!message.channel.guild) return;
-var prefix = "#";
-  if (message.content ===  prefix + 'ui') {
+var prefix = "!";
+  if (message.content ===  prefix + 'عني') {
 let user = message.mentions.users.first();    
  if (!user) { user = message.author }
 let guild = message.guild;
