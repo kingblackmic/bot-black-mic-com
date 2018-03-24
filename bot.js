@@ -48,7 +48,7 @@ let embed = new Discord.RichEmbed()
 });
 
 client.on('message', message => {
-if (message.content === "-server") {
+if (message.content === "معلومات") {
 if(!message.channel.guild) return;
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
 const now = new Date();
