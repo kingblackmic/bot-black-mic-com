@@ -117,8 +117,7 @@ return;
                         let embed = new Discord.RichEmbed()
                         .setAuthor(message.author.username,message.author.avatarURL)
                         .setColor('RANDOM')
-                        .addField('**Time Taken:**',msg + " ms :signal_strength: ")
-                        .addField('**WebSocket:**',api + " ms :signal_strength: ")
+                        .addField('**الوقت المستغرق:**',msg + " ms :signal_strength: ")
          message.channel.send({embed:embed});
                         }
 });
