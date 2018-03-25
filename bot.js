@@ -158,4 +158,14 @@ client.on("message", message => {
    }); 
 
 
+
+client.on('message', message => {
+    if (message.content === "-Gta v") {
+        if(!message.channel.guild) return;
+        message.member.addRole(message.guild.roles.find("name", "Gta v"));
+  }
+    
+});
+
+
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
