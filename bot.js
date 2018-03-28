@@ -244,7 +244,7 @@ var id = new  Discord.RichEmbed()
 .setDescription([`**${moment().format('HH:mm:ss A')} <-- Time
 ${moment().format('YYYY/M/D')} <-- Day
 ${moment().format('dddd')} <-- Date**`])
-message.channel.send(id) //By:MohamedTarek#0849
+message.channel.send(id) 
 };
 });
 
