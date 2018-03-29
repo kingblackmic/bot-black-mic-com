@@ -183,7 +183,11 @@ client.on('message', message => {
 
 
 
-
+client.on('message', msg => {
+  if (msg.content === '!help') {
+    msg.reply('تم الارسال على الخاص :white_check_mark: ');
+  }
+});
 
 
 
