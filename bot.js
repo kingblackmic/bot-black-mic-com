@@ -147,9 +147,14 @@ client.on("message", message => {
   
      **✨ Commands | اوامر ✨**
 **رابط** | !link
+
 **رساله** | !bc
+
 **معلومات سيرفر** | !ml
+
 **عنك** | !an
+
+**عدد الاشخاص في السيرفر** | !bot
 
    `)
    message.author.sendEmbed(embed)
