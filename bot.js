@@ -218,29 +218,21 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 });
 
 
- client.on('message', function(message) {
-
-    var prefix = "-";
-
- if(message.content.startsWith(prefix + 'act')) {
- let guild = message.mentions.members.first();
-let modlog = client.channels.find('name', 'actroom')
- if (!modlog) return message.reply("**There Are no room named 'Welcome'**").catch(console.error);
- let ActRole = client.guilds.get(message.guild.id).roles.find('name', 'Act')
-   if (!ActRole) return message.reply("**There Are not any role named 'Act' **")
-  let ZmA = new Discord.RichEmbed()
-   .setColor('RANDOM')
-.setDescription(':white_check_mark: You Are Now Activated')
-.addField('You Are Now Activated :', "<@" + message.author.id + ">")
-    message.delete("..")
+       client.on('guildMemberAdd', member => {
+          var embed = new Discord.RichEmbed()
+          .setAuthor(member.user.username, member.user.avaterURL)
+          .setThumbnail(member.user.avatarURL)
+          .setTitle(`welcome`)
+          .setDescription(`Welcome To Our Server :blush:`)
+          .addField(':bust_in_silhouette: You Are The Member Number', `**[ ${member.guild.memberCount} ]**`)
+          .setColor('RANDOM')
+          .setFooter('F4resBot')
 
 
-      // message.member.addRole(Message.guild.roles.fin('name', 'Act'));
-                    message.channel.send({embed:ZmA});
-}
-}); 
-
-
+        var channel = member.guild.channel.find('name', 'welcome')
+        if (!channel) return;
+        channel.send({embed : embed}); 
+    }); 
 
 
 
