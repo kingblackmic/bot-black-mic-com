@@ -223,9 +223,9 @@ client.on('message', message => {
     if(message.content === "!bot") {
         const embed = new Discord.RichEmbed()
         .setColor("#00FFFF")
-        .setDescription(`**Servers**🌐 **__${client.guilds.size}__**
-**Users**👥 **__${client.users.size}__**
-**Channels**📚 **__${client.channels.size}__** `)
+        .setDescription(`**الخوادم** 🌐 **__${client.guilds.size}__**
+**المستخدمين** 👥 **__${client.users.size}__**
+**قنوات** 📚 **__${client.channels.size}__** `)
                message.channel.sendEmbed(embed);
            }
 });
