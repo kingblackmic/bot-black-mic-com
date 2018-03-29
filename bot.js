@@ -218,22 +218,16 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 });
 
 
-       client.on('guildMemberAdd', member => {
-          var embed = new Discord.RichEmbed()
-          .setAuthor(member.user.username, member.user.avaterURL)
-          .setThumbnail(member.user.avatarURL)
-          .setTitle(`welcome`)
-          .setDescription(`Welcome To Our Server HERO :blush:`)
-          .addField(':bust_in_silhouette: You Are The Member Number', `**[ ${member.guild.memberCount} ]**`)
-          .setColor('RANDOM')
-          .setFooter('F4resBot')
 
-
-        var channel = member.guild.channel.find('name', 'welcome')
-        if (!channel) return;
-        channel.send({embed : embed}); 
-    }); 
-
-
+client.on('message', message => {
+    if(message.content === "!bot") {
+        const embed = new Discord.RichEmbed()
+        .setColor("#00FFFF")
+        .setDescription(`**Servers**🌐 **__${client.guilds.size}__**
+**Users**👥 **__${client.users.size}__**
+**Channels**📚 **__${client.channels.size}__** `)
+               message.channel.sendEmbed(embed);
+           }
+});
 
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
