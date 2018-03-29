@@ -223,7 +223,7 @@ if (message.content.startsWith(prefix + 'setavatar')) {
           .setAuthor(member.user.username, member.user.avaterURL)
           .setThumbnail(member.user.avatarURL)
           .setTitle(`welcome`)
-          .setDescription(`Welcome To Our Server :blush:`)
+          .setDescription(`Welcome To Our Server HERO :blush:`)
           .addField(':bust_in_silhouette: You Are The Member Number', `**[ ${member.guild.memberCount} ]**`)
           .setColor('RANDOM')
           .setFooter('F4resBot')
