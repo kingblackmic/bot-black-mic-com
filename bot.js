@@ -218,34 +218,30 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 });
 
 
-client.on('message', message => {
-             var prefix = "!"
-if (message.content.startsWith(prefix + "time")) {
-let user = message.mentions.users.first();
-var args = message.content.split(" ").slice(1);
-var men = message.mentions.users.first();
-var heg;
-if(men) {
-heg = men
-} else {
-heg = message.author
+ client.on('message', function(message) {
+
+    var prefix = "-";
+
+ if(message.content.startsWith(prefix + 'act')) {
+ let guild = message.mentions.members.first();
+let modlog = client.channels.find('name', 'actroom')
+ if (!modlog) return message.reply("**There Are no room named 'Welcome'**").catch(console.error);
+ let ActRole = client.guilds.get(message.guild.id).roles.find('name', 'Act')
+   if (!ActRole) return message.reply("**There Are not any role named 'Act' **")
+  let ZmA = new Discord.RichEmbed()
+   .setColor('RANDOM')
+.setDescription(':white_check_mark: You Are Now Activated')
+.addField('You Are Now Activated :', "<@" + message.author.id + ">")
+    message.delete("..")
+
+
+      // message.member.addRole(Message.guild.roles.fin('name', 'Act'));
+                    message.channel.send({embed:ZmA});
 }
-var mentionned = message.mentions.members.first();
-var h;
-if(mentionned) {
-h = mentionned
-} else {
-h = message.member
-}
-moment.locale('ar-TN'); //TN
-var id = new  Discord.RichEmbed()
-.setColor("RANDOM")
-.setAuthor(`${heg.username}#${heg.discriminator} `,heg.avatarURL)
-.setDescription([`**${moment().format('HH:mm:ss A')} <-- Time
-${moment().format('YYYY/M/D')} <-- Day
-${moment().format('dddd')} <-- Date**`])
-message.channel.send(id) 
-};
-});
+}); 
+
+
+
+
 
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
