@@ -233,5 +233,9 @@ client.on('message', message => {
 });
 
 
+client.on('guildMemberAdd', (member) => {
+member.addRole(member.guild.roles.find('name', 'New-Hero'));
+});
+
 
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
