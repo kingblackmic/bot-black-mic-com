@@ -238,4 +238,146 @@ member.addRole(member.guild.roles.find('name', 'New-Hero'));
 });
 
 
+
+
+client.on('message', msg => {
+  if (msg.content === 'السعودية') {      
+    msg.react("🇸🇦")
+	msg.channel.send("🇸🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'مصر') {      
+    msg.react("🇪🇬")
+	msg.channel.send("🇪🇬")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'المغرب') {      
+    msg.react("🇲🇦")
+	msg.channel.send("🇲🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'العراق') {      
+    msg.react("🇮🇶")
+	msg.channel.send("🇮🇶")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الجزائر') {      
+    msg.react("🇩🇿")
+	msg.channel.send("🇩🇿")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الامارات') {      
+    msg.react("🇦🇪")
+	msg.channel.send("🇦🇪")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'تونس') {      
+    msg.react("🇹🇳")
+	msg.channel.send("🇹🇳")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'سوريا') {      
+    msg.react("🇸🇾")
+	msg.channel.send("🇸🇾")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ليبيا') {      
+    msg.react("🇱🇾")
+	msg.channel.send("🇱🇾")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'قطر') {      
+    msg.react("🇶🇦")
+	msg.channel.send("🇶🇦")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الصومال') {      
+    msg.react("🇸🇴")
+	msg.channel.send("🇸🇴")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'عمان') {      
+    msg.react("🇴🇲")
+	msg.channel.send("🇴🇲")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'موريتانيا') {      
+    msg.react("🇲🇷")
+	msg.channel.send("🇲🇷")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'السودان') {      
+    msg.react("🇸🇩")
+	msg.channel.send("🇸🇩")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'جيبوتي') {      
+    msg.react("🇩🇯")
+	msg.channel.send("🇩🇯")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'لبنان') {      
+    msg.react("🇱🇧")
+	msg.channel.send("🇱🇧")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'البحرين') {      
+    msg.react("🇧🇭")
+	msg.channel.send("🇧🇭")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الاردن') {      
+    msg.react("🇯🇴")
+	msg.channel.send("🇯🇴")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'اليمن') {      
+    msg.react("🇾🇪")
+	msg.channel.send("🇾🇪")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الكويت') {      
+    msg.react("🇰🇼")
+	msg.channel.send("🇰🇼")
+  }
+});
+
 client.login('NDI3MDk0MzI1NDI0MjkxODYy.DZgA_g.t4K2Rl4CmqWgAGdBLgn7mcMs4sQ');
