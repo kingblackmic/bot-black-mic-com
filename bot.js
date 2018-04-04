@@ -3,7 +3,7 @@ const client = new Discord.Client();
 console.log(' stream is Online')
 
 client.on('ready', () => {
-  client.user.setGame(`تحت ططوير`,'https://www.twitch.tv/v5bz');
+  client.user.setGame(`واعتذر الالم عن الحضور ..فهنا تتلاقى القلوب 💕`,'https://www.twitch.tv/v5bz');
 });
 
 
